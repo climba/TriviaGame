@@ -6,6 +6,7 @@
   <title>TriviaGame: The Game</title>
   <!-- Bootstrap File -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/styles.css" >
 </head>
   <body>
     <!-- Overall Bootstrap Grid -->
@@ -20,58 +21,47 @@
         </div>
       </div>
       <div class="row">
-        <!-- Left Panel -->
-        <div class="col-lg-6">
-            <div class="row">
-            <div class="col-lg-12">
-          <!-- Panel -->
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">Panel</h3>
-            </div>
-            <div class="panel-body">
-              <div class="text-center">
-                <h4>Panel</h4>
-              </div>
-            </div>
-          </div>
-        </div>
+        <!-- Main Panel -->   
         <div class="col-lg-12">
-          <!-- Panel -->
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h3 class="panel-title">Panel</h3>
+              <h3 class="panel-title">Main Panel</h3>
             </div>
             <div class="panel-body">
               <div class="text-center">
-                <h4>Panel</h4>
+                <div id="quiz"></div>
+                <button id="submit">Submit Quiz</button>
+                <div id="results"></div>
+                
+                <label class="check-cont">One
+                  <input type="checkbox" checked="checked">
+                  <span class="checkmark"></span>
+                </label>
+                
+                <label class="check-cont">Two
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+                
+                <label class="check-cont">Three
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
+                
+                <label class="check-cont">Four
+                  <input type="checkbox">
+                  <span class="checkmark"></span>
+                </label>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-        <!-- Right Panel -->
-        <div class="col-lg-6">
-          <div class="panel panel-default">
-              <div class="panel-heading">
-                <h3 class="panel-title">Panel</h3>
-              </div>
-              <div class="panel-body">
-                <div class="text-center">
-                    <div id="targetDiv">
-                      <!-- targetDiv -->
-                  </div>
-                </div>
-              </div>
-            </div>
         </div>
       </div>
     </div>
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Javascript -->
-    <script src="assets/javascript/app.js"></script>
+    <script src="assets/javascript/app-v2.js"></script>
   </body>
   
 </html>

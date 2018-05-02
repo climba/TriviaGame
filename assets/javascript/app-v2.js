@@ -1,7 +1,7 @@
 // JavaScript function that wraps everything
 $(document).ready(function() {
 
-const myQuestions = [
+var myQuestions = [
   {
     question: "In rhyming slang, if someone said they we going to have a 'bo-peep', what they be doing?",
     answers: {
@@ -95,29 +95,29 @@ const myQuestions = [
 ];
 
 
-const quizContainer = document.getElementById('quiz');
-const resultsContainer = document.getElementById('results');
-const submitButton = document.getElementById('submit');
+var quizContainer = document.getElementById('quiz');
+var resultsContainer = document.getElementById('results');
+var submitButton = document.getElementById('submit');
 
 
 function buildQuiz(){
-  // we'll need a place to store the HTML output
-  const output = [];
+  // The HTML output get stored here
+  var output = [];
 
   // for each question...
   myQuestions.forEach(
     (currentQuestion, questionNumber) => {
 
-      // we'll want to store the list of answer choices
-      const answers = [];
+      // For each question there is a list of possible answers
+      var answers = [];
 
-      // and for each available answer...
+      // for each available answer...
       for(letter in currentQuestion.answers){
 
         // ...add an HTML radio button
         answers.push(
           `<label>
-            <input type="radio" name="question${questionNumber}" value="${letter}">
+            <input class="radbs" type="radio" name="question${questionNumber}" value="${letter}">
             ${letter} :
             ${currentQuestion.answers[letter]}
           </label>`
@@ -149,7 +149,7 @@ function buildQuiz(){
   myQuestions.forEach( (currentQuestion, questionNumber) => {
     // here goes the code we want to run for each question
     // we'll want to store the list of answer choices
-const answers = [];
+var answers = [];
 
 // and for each available answer...
 for(letter in currentQuestion.answers){
@@ -177,7 +177,7 @@ output.push(
   function showResults(){
 
     // gather answer containers from our quiz
-    const answerContainers = quizContainer.querySelectorAll('.answers');
+    var answerContainers = quizContainer.querySelectorAll('.answers');
   
     // keep track of user's answers
     let numCorrect = 0;
@@ -186,9 +186,9 @@ output.push(
     myQuestions.forEach( (currentQuestion, questionNumber) => {
   
       // find selected answer
-      const answerContainer = answerContainers[questionNumber];
-      const selector = 'input[name=question'+questionNumber+']:checked';
-      const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+      var answerContainer = answerContainers[questionNumber];
+      var selector = 'input[name=question'+questionNumber+']:checked';
+      var userAnswer = (answerContainer.querySelector(selector) || {}).value;
   
       // if answer is correct
       if(userAnswer===currentQuestion.correctAnswer){
@@ -210,7 +210,7 @@ output.push(
   }
 
   // gather answer containers from our quiz
-const answerContainers = quizContainer.querySelectorAll('.answers');
+var answerContainers = quizContainer.querySelectorAll('.answers');
 
 // keep track of user's answers
 let numCorrect = 0;
@@ -219,9 +219,9 @@ let numCorrect = 0;
 myQuestions.forEach( (currentQuestion, questionNumber) => {
 
   // find selected answer
-  const answerContainer = answerContainers[questionNumber];
-  const selector = `input[name=question${questionNumber}]:checked`;
-  const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+  var answerContainer = answerContainers[questionNumber];
+  var selector = `input[name=question${questionNumber}]:checked`;
+  var userAnswer = (answerContainer.querySelector(selector) || {}).value;
 
   // if answer is correct
   if(userAnswer===currentQuestion.correctAnswer){
@@ -232,7 +232,7 @@ myQuestions.forEach( (currentQuestion, questionNumber) => {
     answerContainers[questionNumber].style.color = 'lightgreen';
   }
   // if answer is wrong or blank
-  else{
+  else {
     // color the answers red
     answerContainers[questionNumber].style.color = 'red';
   }
